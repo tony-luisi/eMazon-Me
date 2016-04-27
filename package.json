@@ -2,9 +2,11 @@
   "name": "eMazon-Me",
   "version": "1.0.0",
   "description": "it's a real sweet app",
-  "main": "index.js",
+  "main": "serve.js",
   "scripts": {
-    "start": "budo . -d --serve bundle.js --live",
+    "start": "node server.js",
+    "serve": "nodemon server.js",
+    "budo": "budo . -d --serve bundle.js --live",
     "build": "browserify . -o bundle.js -g uglifyify",
     "test": "browserify test.js | node | tap-spec",
     "dist": "mkdir -p dist && bash -c 'cp *.{js,html,css} dist'",
@@ -12,7 +14,9 @@
     "deploy": "npm run build && npm run dist && npm run push"
   },
   "browserify": {
-    "transform": ["babelify"]
+    "transform": [
+      "babelify"
+    ]
   },
   "repository": {
     "type": "git",
@@ -23,17 +27,22 @@
   "bugs": {
     "url": "https://github.com/ben-scully/eMazon-Me/issues"
   },
+  "engines": {
+    "node": "4.4.0"
+  },
   "homepage": "https://github.com/ben-scully/eMazon-Me",
   "dependencies": {},
   "devDependencies": {
     "babel-preset-es2015": "^6.5.0",
     "babel-preset-react": "^6.5.0",
     "babelify": "^7.2.0",
+    "body-parser": "^1.15.0",
     "browserify": "^13.0.0",
     "budo": "^8.2.0",
+    "express": "^4.13.4",
     "gh-pages": "^0.11.0",
-    "react": "^15.0.1", 
-    "react-dom": "^15.0.1", 
+    "react": "^15.0.1",
+    "react-dom": "^15.0.1",
     "tap-spec": "^4.1.1",
     "tape": "^4.5.1",
     "uglifyify": "^3.0.1",
