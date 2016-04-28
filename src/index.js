@@ -15,7 +15,7 @@ render((
 			<Route path="/item/:itemID" component={Item}/>
 		</Route>
   </Router>
-), document.body)
+), document.getElementById('wiggle'))
 
 // app
 // 	homepage
