@@ -2,9 +2,11 @@
   "name": "eMazon-Me",
   "version": "1.0.0",
   "description": "it's a real sweet app",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "start": "budo . -d --serve bundle.js --live",
+    "start": "node server.js",
+    "serve": "nodemon server.js",
+    "budo": "budo index.js -d --serve bundle.js --live",
     "build": "browserify . -o bundle.js -g uglifyify",
     "test": "browserify test.js | node | tap-spec",
     "dist": "mkdir -p dist && bash -c 'cp *.{js,html,css,jpg,png} dist'",
