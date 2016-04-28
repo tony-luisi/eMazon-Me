@@ -8,7 +8,7 @@ import results from './data/sampleData'
 
 ReactDOM.render(
   <div>
-  <FrontPage />
+    <FrontPage />
     <ResultsPage results={results}/>
   </div>
     , document.querySelector('body')
