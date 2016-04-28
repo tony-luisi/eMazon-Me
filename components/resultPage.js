@@ -1,7 +1,5 @@
 import React from 'react'
 
-///displays page for results of a search( for individual results see 'result.js')
-
 class ResultsPage extends React.Component{
   constructor( props ){
     super( props )

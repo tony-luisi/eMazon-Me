@@ -1,7 +1,5 @@
 import React from 'react'
 
-//displays an array
-
 class Item extends React.Component{
   constructor(props){
     super(props)
