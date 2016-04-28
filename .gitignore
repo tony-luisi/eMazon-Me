@@ -1,9 +1,9 @@
 node_modules
 npm-debug.log*
 
-/bundle.js
-/george.js
+*bundle.js
+*george.js
 .DS_Store
-/dist
-/rawad.js
-/scully.js
+*dist
+*rawad.js
+*scully.js
