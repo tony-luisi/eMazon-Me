@@ -15,8 +15,6 @@ app.get('/', function(req,res) {
 	res.send('wassup dawg')
 })
 
-if (require.main === module) {
-  server.listen(port, function () {
-    console.log('http server listening on port: ', port)
-  })
-}
+server.listen(port, function () {
+  console.log('http server listening on port: ', port)
+})
