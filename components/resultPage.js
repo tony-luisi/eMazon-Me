@@ -1,4 +1,5 @@
 import React from 'react'
+import Result from './Result.js'
 
 class ResultsPage extends React.Component{
   constructor( props ){
