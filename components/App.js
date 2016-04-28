@@ -9,7 +9,7 @@ class App extends React.Component {
     return (
       <div className="app">
         <h1>App: Overall App Container</h1>
-        <Link to={'home'}>navigation to home</Link>
+        <Link to={'/home'}>navigation to home</Link>
         <div className='content'>
 					{this.props.children}
 				</div>

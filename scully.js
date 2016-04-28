@@ -7,7 +7,6 @@ import HomePage from './components/HomePage'
 import Store from './components/Store'
 import Item from './components/Item'
 
-
 render((
   <Router history={browserHistory}>
     <Route path="/" component={App}>
@@ -17,7 +16,6 @@ render((
 		</Route>
   </Router>
 ), document.body)
-
 
 // app
 // 	homepage
