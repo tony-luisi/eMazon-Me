@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node server.js",
     "serve": "nodemon server.js",
-    "budo": "budo . -d --serve bundle.js --live",
+    "budo": "budo index.js -d --serve bundle.js --live",
     "build": "browserify . -o bundle.js -g uglifyify",
     "test": "browserify test.js | node | tap-spec",
     "dist": "mkdir -p dist && bash -c 'cp *.{js,html,css} dist'",
