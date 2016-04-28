@@ -1,15 +1,9 @@
-console.log("welcome to eMazon-Me")
+
 import React from 'react'
-import ReactDOM from 'react-dom'
+import { render } from 'react-dom'
 import FrontPage from './components/FrontPage'
-import ResultsPage from './components/ResultPage'
-import results from './data/sampleData'
+import storeTNs from './data/thumbnailSampleData'
 
 
-ReactDOM.render(
-  <div>
-    <FrontPage />
-    <ResultsPage results={results}/>
-  </div>
-    , document.querySelector('body')
-  )
+render(<FrontPage storeTNs={storeTNs}/>, document.querySelector('body'))
+

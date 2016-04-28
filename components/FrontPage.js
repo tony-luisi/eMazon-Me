@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import StoreTN from './StoreTN'
 
 class FrontPage extends Component{
 
@@ -10,18 +11,15 @@ class FrontPage extends Component{
     return (
         <div className="blah">
             <h2>eMazon-Me</h2>
-
           <div className='search'>
               <form>
                 <input className= 'search-bar' type="text" placeholder="Search..." required />
                 <input className= 'search-bttn' type="button" value="Search" />
               </form>
             </div>
+            {this.props.storeTNs.map( (storeTN) =>
+              <StoreTN name={storeTN.name} items={storeTN.items} logo={storeTN.logo} />)}
 
-            <div className='nike'></div>
-            <div className='addidas'></div>
-            <div className='hp'></div>
-            <div className='beats'></div>
         </div>
     )
   }
