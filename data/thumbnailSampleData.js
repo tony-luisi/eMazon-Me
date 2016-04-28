@@ -1,30 +1,37 @@
+import sampleItems from './sampleData'
+
 var stores = [
   {
+    storeID: 100,
     name: "Nike",
     logo: "./data/swoosh.png",
-    items: [123, 321, 213]
-
+    items: sampleItems
   },
   {
+    storeID: 101,
     name: "Coogi",
     logo: "./data/coogi.gif",
-    items: [123, 321, 213]
+    items: sampleItems
   },
   {
+    storeID: 102,
     name: "Oakley",
     logo: "./data/oakley.jpg",
-    items: [123, 321, 213]
+    items: sampleItems
   },
   {
+    storeID: 103,
     name: "Nintendo",
     logo: "./data/nintendo.png",
-    items: [123, 321, 213]
-  },
-  {
-    name: "Nike",
-    logo: "./data/swoosh.png",
-    items: [123, 321, 213]
+    items: sampleItems
   }
 ]
 
+function getStoreByID (id) {
+  var store = stores.filter( i => i.storeID === id)
+  return store[0]
+}
+
 export default stores
+
+export { getStoreByID }
