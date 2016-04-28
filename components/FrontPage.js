@@ -18,7 +18,7 @@ class FrontPage extends Component{
               </form>
             </div>
             {this.props.storeTNs.map( (storeTN) =>
-              <StoreTn name={storeTN.name} items={storeTN.items} logo={storeTN.logo} />)}
+              <StoreTN name={storeTN.name} items={storeTN.items} logo={storeTN.logo} />)}
 
         </div>
     )
