@@ -10,12 +10,14 @@ class BuyItem extends React.Component {
     return (
       <div className="item">
         <h1> buy now </h1>
-        <form>
+        <form method="POST" action='/api/buy'>
           First name: <input type="text" name="fname" /><br />
           Last name: <input type="text" name="lname" /><br />
+          Credit Card: <input type="text" name="creditCard" /><br />
           <input type="submit" defaultValue="Submit" />
       </form>
       </div>
-    )}}
+    )}
+  }
 
 export default BuyItem

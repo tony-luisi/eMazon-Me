@@ -17,8 +17,7 @@ class Item extends React.Component {
   }
 
   showForm() {
-    // console.log('James is a wanker');
-    this.setState({ buy: ['james is a wanker'] })
+    this.setState({ buy: ['Tony'] })
   }
 
   render() {

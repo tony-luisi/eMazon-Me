@@ -24692,12 +24692,15 @@ var BuyItem = function (_React$Component) {
         ),
         _react2.default.createElement(
           'form',
-          null,
+          { method: 'POST', action: '/api/buy' },
           'First name: ',
           _react2.default.createElement('input', { type: 'text', name: 'fname' }),
           _react2.default.createElement('br', null),
           'Last name: ',
           _react2.default.createElement('input', { type: 'text', name: 'lname' }),
+          _react2.default.createElement('br', null),
+          'Credit Card: ',
+          _react2.default.createElement('input', { type: 'text', name: 'creditCard' }),
           _react2.default.createElement('br', null),
           _react2.default.createElement('input', { type: 'submit', defaultValue: 'Submit' })
         )
@@ -24820,8 +24823,7 @@ var Item = function (_React$Component) {
   }, {
     key: 'showForm',
     value: function showForm() {
-      // console.log('James is a wanker');
-      this.setState({ buy: ['james is a wanker'] });
+      this.setState({ buy: ['Tony'] });
     }
   }, {
     key: 'render',
@@ -24942,6 +24944,12 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _sampleData = require('../data/sampleData');
+
+var _sampleData2 = _interopRequireDefault(_sampleData);
+
+var _reactRouter = require('react-router');
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -24960,6 +24968,17 @@ var SearchBar = function (_React$Component) {
   }
 
   _createClass(SearchBar, [{
+    key: 'getItemByName',
+    value: function getItemByName() {
+      var searchValue = this.refs.Search.value.toLowerCase();
+      var item = _sampleData2.default.filter(function (i) {
+        return i.name.toLowerCase() === searchValue;
+      });
+      var id = item[0].itemID;
+      _reactRouter.browserHistory.push('/item/' + id);
+      return item[0];
+    }
+  }, {
     key: 'render',
     value: function render() {
       return _react2.default.createElement(
@@ -24971,11 +24990,11 @@ var SearchBar = function (_React$Component) {
           _react2.default.createElement(
             'div',
             { className: 'input-group' },
-            _react2.default.createElement('input', { className: 'input-group-field', type: 'text', placeholder: 'Search...', required: true }),
+            _react2.default.createElement('input', { className: 'input-group-field', type: 'text', placeholder: 'Search...', ref: 'Search' }),
             _react2.default.createElement(
               'div',
               { className: 'input-group-button' },
-              _react2.default.createElement('input', { className: 'button', type: 'button', value: 'Search' })
+              _react2.default.createElement('input', { className: 'button', type: 'button', value: 'Search', onClick: this.getItemByName.bind(this) })
             )
           )
         )
@@ -24988,7 +25007,7 @@ var SearchBar = function (_React$Component) {
 
 exports.default = SearchBar;
 
-},{"react":223}],232:[function(require,module,exports){
+},{"../data/sampleData":235,"react":223,"react-router":80}],232:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
