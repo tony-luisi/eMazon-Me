@@ -19,10 +19,10 @@ class Store extends React.Component {
   render () {
     return (
       <div className="store">
-        <h1>Store Name: {this.state.storeInfo.name}</h1>
-        <div className="store">
+        <h1>{this.state.storeInfo.name}</h1>
+        <div className="row small-up-1 medium-up-2 large-up-4">
           {this.state.storeInfo.items.map( i =>
-          <div key={i.itemID}>
+          <div className='column' key={i.itemID}>
           <Link to={`/item/${i.itemID}`}>
            <ItemTN name={i.name}
                    image={i.image}

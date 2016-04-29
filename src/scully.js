@@ -1,17 +1,18 @@
 import React from 'react'
 import { render } from 'react-dom'
-import { Router, Route, Link, browserHistory,IndexRoute } from 'react-router'
+import { Router, Route, Link, browserHistory } from 'react-router'
 
 import App from './components/App'
 import HomePage from './components/HomePage'
 import Store from './components/Store'
 import Item from './components/Item'
 
+console.log('test')
+
 render((
   <Router history={browserHistory}>
     <Route path="/" component={App}>
-			<IndexRoute component={HomePage}/>
-			<Route path="/home" component={HomePage}/>
+			<Route path="home" component={HomePage}/>
 			<Route path="/store/:storeID" component={Store}/>
 			<Route path="/item/:itemID" component={Item}/>
 		</Route>

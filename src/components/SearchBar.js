@@ -8,10 +8,13 @@ class SearchBar extends React.Component {
 	render () {
 		return (
 			<div className='searchBar'>
-        <h3>SearchBar:</h3>
 		    <form>
-		      <input className='search-bar' type="text" placeholder="Search..." required />
-		      <input className='search-btn' type="button" value="Search" />
+          <div className='input-group'>
+            <input className='input-group-field' type="text" placeholder="Search..." required />
+            <div className="input-group-button">
+    		      <input className='button' type="button" value="Search" />
+            </div>
+          </div>
 		    </form>
 		  </div>
 		)}}
