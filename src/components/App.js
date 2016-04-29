@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router'
+import request from 'superagent'
 
 class App extends React.Component {
   constructor(props) {
