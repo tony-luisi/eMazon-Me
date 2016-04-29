@@ -24904,22 +24904,21 @@ var ItemTN = function (_React$Component) {
         "div",
         { className: "itemTN" },
         _react2.default.createElement(
-          "h2",
+          "h4",
           null,
-          "Item TN: ",
           this.props.name
         ),
         _react2.default.createElement("img", { src: this.props.image }),
         _react2.default.createElement(
-          "h3",
+          "h4",
           null,
-          "start price: ",
+          "Starting price: ",
           this.props.start_price
         ),
         _react2.default.createElement(
-          "h3",
+          "h4",
           null,
-          "buy now price: ",
+          "Buy Now price: ",
           this.props.buynow_price
         )
       );
@@ -25058,11 +25057,15 @@ var Store = function (_React$Component) {
     value: function render() {
       return _react2.default.createElement(
         'div',
-        { className: 'store' },
+        null,
         _react2.default.createElement(
-          'h1',
-          null,
-          this.state.storeInfo.name
+          'div',
+          { className: 'row' },
+          _react2.default.createElement(
+            'div',
+            { className: 'medium-centered large-centered' },
+            _react2.default.createElement('img', { src: "/" + this.state.storeInfo.logo })
+          )
         ),
         _react2.default.createElement(
           'div',
@@ -25128,7 +25131,7 @@ var StoreTN = function (_React$Component) {
         'div',
         null,
         _react2.default.createElement(
-          'h4',
+          'h2',
           null,
           this.props.name
         ),
@@ -25166,13 +25169,6 @@ var StoreTN = function (_React$Component) {
 }(_react2.default.Component);
 
 exports.default = StoreTN;
-
-{/*<div class="column">
-  <img class="thumbnail" src="http://placehold.it/300x400">
-  <h5>Nulla At Nulla Justo, Eget</h5>
-  <p>$400</p>
-  <a href="#" class="button expanded">Buy</a>
-  </div>*/}
 
 },{"react":223}],234:[function(require,module,exports){
 'use strict';
