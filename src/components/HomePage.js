@@ -12,7 +12,6 @@ class HomePage extends React.Component {
   render () {
     return (
       <div className="homePage">
-        <h1>HomePage: SearchBar & StoresListings</h1>
         <SearchBar />
         <StoresListings storeTNs={testData} />
       </div>
