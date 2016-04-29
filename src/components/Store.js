@@ -18,11 +18,15 @@ class Store extends React.Component {
 
   render () {
     return (
-      <div className="store">
-        <h1>Store Name: {this.state.storeInfo.name}</h1>
-        <div className="store">
+    <div>
+      <div className="row">
+        <div className="medium-centered large-centered">
+          <img src={"/"+this.state.storeInfo.logo}/>
+        </div>
+      </div>
+        <div className="row small-up-1 medium-up-2 large-up-4">
           {this.state.storeInfo.items.map( i =>
-          <div key={i.itemID}>
+          <div className='column' key={i.itemID}>
           <Link to={`/item/${i.itemID}`}>
            <ItemTN name={i.name}
                    image={i.image}

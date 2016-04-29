@@ -10,10 +10,9 @@ class StoresListings extends React.Component {
   render () {
     return (
       <div className="storesPage">
-        <h1>Stores Listings:</h1>
-        <div className="storesPageStoreTNs">
+        <div className="row small-up-1 medium-up-2 large-up-4">
           {this.props.storeTNs.map( tn =>
-            <div key={tn.storeID}>
+            <div className="column" key={tn.storeID}>
             <Link to={`/store/${tn.storeID}`}>
               <StoreTN
                        name={tn.name}
@@ -27,3 +26,10 @@ class StoresListings extends React.Component {
     )}}
 
 export default StoresListings
+
+{/*<div class="column">
+<img class="thumbnail" src="http://placehold.it/300x400">
+<h5>Nulla At Nulla Justo, Eget</h5>
+<p>$400</p>
+<a href="#" class="button expanded">Buy</a>
+</div>*/}
