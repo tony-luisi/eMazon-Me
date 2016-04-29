@@ -1,14 +1,17 @@
 import React from 'react'
 import results from '../data/sampleData'
+import { browserHistory } from 'react-router'
 
 class SearchBar extends React.Component {
   constructor(props) {
     super(props)
   }
 
-  getItemByName(name) {
-    var item = results.filter( i => i.itemName=== name)
+  getItemByName() {
     const searchValue = this.refs.Search.value
+    var item = results.filter( i => i.name === searchValue)
+    const id = item[0].itemID;
+    browserHistory.push(`/item/${id}`)
     return item[0]
   }
 
@@ -19,7 +22,7 @@ class SearchBar extends React.Component {
 		    <form>
 		      <input className='search-bar' type="text" placeholder="Search..." ref="Search" />
 		      <input className='search-btn' type="button" value="Search" onClick={this.getItemByName.bind(this)} />
-		    </form>
+      </form>
 		  </div>
 		)}}
 
