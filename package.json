@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "serve": "node server.js",
+    "serve": "nodemon server.js",
     "budo": "budo index.js -d --serve bundle.js --live",
     "budoRawad": "budo rawad.js -d --serve bundle.js --live",
     "budoScully": "budo scully.js -d --serve bundle.js --live",
