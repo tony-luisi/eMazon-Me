@@ -15,6 +15,7 @@ class HomePage extends React.Component {
     request.get('/stores').end(function(err, res){
       console.log('error', err)
       var storeData = JSON.parse(res.text)
+      console.log(storeData)
       this.setState({ testData: storeData })
     }.bind(this))
   }

@@ -26254,6 +26254,7 @@ var HomePage = function (_React$Component) {
       _superagent2.default.get('/stores').end(function (err, res) {
         console.log('error', err);
         var storeData = JSON.parse(res.text);
+        console.log(storeData);
         this.setState({ testData: storeData });
       }.bind(this));
     }
@@ -26471,13 +26472,24 @@ var SearchBar = function (_React$Component) {
   _createClass(SearchBar, [{
     key: 'getItemByName',
     value: function getItemByName() {
-      var searchValue = this.refs.Search.value.toLowerCase();
+      var searchValue = this.refs.Search.value;
+      var r = new RegExp(searchValue, 'i');
       var item = _sampleData2.default.filter(function (i) {
-        return i.name.toLowerCase() === searchValue;
+        return i.name.match(r);
       });
       var id = item[0].itemID;
       _reactRouter.browserHistory.push('/item/' + id);
       return item[0];
+    }
+  }, {
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      this.refs.Search.addEventListener('keydown', function (event) {
+        if (event.which == 13) {
+          event.preventDefault();
+          // tirgger getItemByName
+        }
+      });
     }
   }, {
     key: 'render',
