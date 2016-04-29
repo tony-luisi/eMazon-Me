@@ -24834,25 +24834,24 @@ var Item = function (_React$Component) {
         _react2.default.createElement(
           'h2',
           null,
-          'Item Name: ',
           this.state.itemInfo.name
         ),
         _react2.default.createElement('img', { src: this.state.itemInfo.image }),
         _react2.default.createElement(
           'h3',
           null,
-          'start price: ',
+          'Starting price: ',
           this.state.itemInfo.start_price
         ),
         _react2.default.createElement(
           'h3',
           null,
-          'buy now price: ',
+          'Buy Now price: ',
           this.state.itemInfo.buynow_price
         ),
         _react2.default.createElement(
           'button',
-          { onClick: this.showForm.bind(this) },
+          { className: 'button', onClick: this.showForm.bind(this) },
           'Buy now!'
         ),
         this.state.buy.map(function (element) {
