@@ -8,13 +8,21 @@ class SearchBar extends React.Component {
   }
 
   getItemByName() {
-    const searchValue = this.refs.Search.value.toLowerCase()
-    var item = results.filter( i => i.name.toLowerCase() === searchValue)
+    const searchValue = this.refs.Search.value
+    const r = new RegExp(searchValue, 'i');
+    var item = results.filter( i => i.name.match(r))
     const id = item[0].itemID;
     browserHistory.push(`/item/${id}`)
     return item[0]
   }
-
+  componentDidMount() {
+    this.refs.Search.addEventListener('keydown', function(event) {
+      if(event.which == 13){
+        event.preventDefault()
+        // tirgger getItemByName
+      }
+    })
+  }
 	render () {
 		return (
 			<div className='searchBar'>
