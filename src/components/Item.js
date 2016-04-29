@@ -23,11 +23,11 @@ class Item extends React.Component {
   render() {
     return (
       <div className="item">
-        <h2>Item Name: {this.state.itemInfo.name}</h2>
+        <h2>{this.state.itemInfo.name}</h2>
         <img src={this.state.itemInfo.image}/>
-        <h3>start price: {this.state.itemInfo.start_price}</h3>
-        <h3>buy now price: {this.state.itemInfo.buynow_price}</h3>
-        <button onClick ={this.showForm.bind(this)}>Buy now!</button>
+        <h3>Starting price: {this.state.itemInfo.start_price}</h3>
+        <h3>Buy Now price: {this.state.itemInfo.buynow_price}</h3>
+        <button className='button' onClick ={this.showForm.bind(this)}>Buy now!</button>
         {this.state.buy.map((element) => {
           return <BuyItem />
         })}
