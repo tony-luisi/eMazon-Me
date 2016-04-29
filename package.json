@@ -10,6 +10,7 @@
     "budoRawad": "budo rawad.js -d --serve bundle.js --live",
     "budoScully": "budo scully.js -d --serve bundle.js --live",
     "build": "browserify ./src/index.js > ./public/js/bundle.js",
+    "build:watch": "watchify ./src/index.js -o ./public/js/bundle.js",
     "test": "browserify test.js | node | tap-spec",
     "dist": "mkdir -p dist && bash -c 'cp *.{js,html,css,jpg,png} dist'",
     "push": "gh-pages -d dist",
